@@ -1,4 +1,4 @@
-# Deep_Learning1
+# Deep Learning 1
 Deep Learning 1 course UvA
 
 In this git repo all assignments are published of the Deep Learning 1 course of the UvA master Artificial Intelligence.
