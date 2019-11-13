@@ -134,18 +134,18 @@ def train():
   create_new_text("pytorch_1", train_acc_list, test_acc_list, list_params, loss_list)
 
   # Plot everything
-  # fig = plt.figure()
-  # ax1 = fig.add_subplot(121)
-  # ax1.plot(train_accs, label='train accuracies' )
-  # ax1.plot(test_accs, label='test accuracies')
-  # ax1.legend()
+  fig = plt.figure()
+  ax1 = fig.add_subplot(121)
+  ax1.plot(train_accs, label='train accuracies' )
+  ax1.plot(test_accs, label='test accuracies')
+  ax1.legend()
 
-  # ax2 = fig.add_subplot(122)
-  # ax2.plot(train_losses, label='train losses' )
-  # ax2.plot(test_losses, label='test losses' )
-  # ax2.legend()
+  ax2 = fig.add_subplot(122)
+  ax2.plot(train_losses, label='train losses' )
+  ax2.plot(test_losses, label='test losses' )
+  ax2.legend()
   # plt.show()
-  # plt.savefig("convnet_results")
+  plt.savefig("convnet_results")
 
   ########################
   # END OF YOUR CODE    #
