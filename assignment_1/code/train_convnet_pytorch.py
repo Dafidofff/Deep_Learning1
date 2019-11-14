@@ -131,7 +131,7 @@ def train():
           print('train error: ', train_loss, ' validation error: ', test_loss, ' validation accuracy: ', test_acc)
   
   # Save lists
-  create_new_text("pytorch_1", train_acc_list, test_acc_list, list_params, loss_list)
+  create_new_text("pytorch_1", train_accs, test_accs, train_losses, test_losses)
 
   # Plot everything
   fig = plt.figure()
