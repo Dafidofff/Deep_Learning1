@@ -144,7 +144,7 @@ def train():
   ax2.plot(train_losses, label='train losses' )
   ax2.plot(test_losses, label='test losses' )
   ax2.legend()
-  # plt.show()
+  plt.show()
   plt.savefig("convnet_results")
 
   ########################

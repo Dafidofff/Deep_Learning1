@@ -60,14 +60,15 @@ class MLP(nn.Module):
         in_features = hidden
 
     # Initialization output layer
-    # dropout_layer = nn.Dropout(p=0.2)
+    dropout_layer = nn.Dropout(p=0.2)
     output_layer = nn.Linear(in_features, n_classes)
-    # output_activation = nn.Softmax(dim=1)
+    output_activation = nn.Softmax(dim=1)
     # self.layers.append(dropout_layer)
     self.layers.append(output_layer)
     # self.layers.append(output_activation)
 
     self.model = nn.Sequential(*self.layers)
+    print(self.model)
     self.model.apply(self.init_weights)
     ########################
     # END OF YOUR CODE    #

@@ -209,10 +209,13 @@ class SoftMaxModule(object):
     ########################
     # PUT YOUR CODE HERE  #
     #######################
-    dx = np.zeros(dout.shape)
-    for i, element in enumerate(self.out):
-      temp_deriv = np.diagflat(element) - np.outer(element, element)
-      dx[i] = np.dot(dout[i], temp_deriv)
+    # dx = np.zeros(dout.shape)
+    # for i, element in enumerate(self.out):
+    #   temp_deriv = np.diagflat(element) - np.outer(element, element)
+    #   dx[i] = np.dot(dout[i], temp_deriv)
+
+    smderiv = np.apply_along_axis(np.diag, 1, self.out) - self.out[:,:, None] * self.out[:,None]
+    dx = np.einsum('ij,ijk->ik', dout, smderiv)
     #######################
     # END OF YOUR CODE    #
     #######################

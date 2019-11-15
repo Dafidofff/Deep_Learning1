@@ -104,6 +104,7 @@ def train():
 
   mlp = MLP(test_x.shape[1], dnn_hidden_units, test_y.shape[1], neg_slope)
   optimizer = optim.Adam(mlp.model.parameters(), lr = FLAGS.learning_rate, weight_decay=1e-6)
+  # optimizer = optim.SGD(mlp.model.parameters(), lr=FLAGS.learning_rate)
   loss_function = nn.CrossEntropyLoss()
 
   for epoch in range(FLAGS.max_steps):
