@@ -18,6 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import random
 import argparse
 import time
 from datetime import datetime
@@ -44,12 +45,26 @@ import sys
 
 ################################################################################
 
+def evaluate_model(config):
+	seeds = [13,69,420]
+	palindrome_lengths = [5,10,15,20,25,30,35,40]
+	accuracies = []
+	for i, seed in enumerate(seeds):
+		random.seed(seed)
+		accuracies.append([])
+		for p_len in palindrome_lengths:
+			config.seq_length = p_len
+			# Train the model
+			accuracies[i].append(train(config, print_eval=False))
+	print(accuracies)
+	return accuracies
+
+
 def calc_accuracy(predictions, targets):
   return (predictions.max(axis=1)[1].cpu().numpy() == targets.cpu().numpy()).sum()/predictions.shape[0]
   
 
-def train(config):
-
+def train(config, print_eval = True):
 	assert config.model_type in ('RNN', 'LSTM')
 
 	# Initialize the device which to run the model on
@@ -94,7 +109,7 @@ def train(config):
 		t2 = time.time()
 		examples_per_second = config.batch_size/float(t2-t1)
 
-		if step % 10 == 0:
+		if step % 10 == 0 and print_eval:
 
 			print("[{}] Train Step {:04d}/{:04d}, Batch Size = {}, Examples/Sec = {:.2f}, "
 				  "Accuracy = {:.2f}, Loss = {:.3f}".format(
@@ -109,6 +124,7 @@ def train(config):
 			break
 
 	print('Done training.')
+	return accuracy
 
 
  ################################################################################
@@ -130,7 +146,11 @@ if __name__ == "__main__":
 	parser.add_argument('--max_norm', type=float, default=10.0)
 	parser.add_argument('--device', type=str, default="cuda:0", help="Training device 'cpu' or 'cuda:0'")
 
+	parser.add_argument('--eval', type=bool, default=False, help="Checks if evaluation is needed")
 	config = parser.parse_args()
 
 	# Train the model
-	train(config)
+	if config.eval:
+		evaluate_model(config)
+	else:	
+		train(config)

@@ -71,7 +71,6 @@ class LSTM(nn.Module):
 			f_t = torch.sigmoid(x[:,step,:] @ self.W_fx + h_t @ self.W_fh + self.B_f)
 			o_t = torch.sigmoid(x[:,step,:] @ self.W_ox + h_t @ self.W_oh + self.B_o)
 
-
 			c_t = g_t * i_t + c_t * f_t
 			h_t = torch.tanh(c_t) * o_t
 
