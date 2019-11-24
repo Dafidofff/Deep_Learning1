@@ -47,25 +47,6 @@ import sys
 
 ################################################################################
 
-def evaluate_model(config):
-	seeds = [13,69,420]
-	palindrome_lengths = [5,10,15,20,25,30,35,40]
-	accuracies = []
-	for i, seed in enumerate(seeds):
-		random.seed(seed)
-		accuracies.append([])
-		for p_len in palindrome_lengths:
-			config.seq_length = p_len
-			# Train the model
-			accuracies[i].append(train(config, print_eval=False))
-	print(accuracies)
-	return accuracies
-
-
-def calc_accuracy(predictions, targets):
-  return (predictions.max(axis=1)[1].cpu().numpy() == targets.cpu().numpy()).sum()/predictions.shape[0]
-  
-
 def train(config, print_eval = True):
 	assert config.model_type in ('RNN', 'LSTM')
 
@@ -73,80 +54,52 @@ def train(config, print_eval = True):
 	device = torch.device(config.device)
 
 	# Initialize the model that we are going to use
-	if config.model_type == "RNN":
-		model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
-	else:
-		model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
+	gradient_norms = [[],[]]
+	for i, model in enumerate(["RNN", "LSTM"]):
+		config.model_type = model
 
-	# Initialize the dataset and data loader (note the +1)
-	dataset = PalindromeDataset(config.input_length+1)
-	data_loader = DataLoader(dataset, config.batch_size, num_workers=1)
+		if config.model_type == "RNN":
+			model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
+		else:
+			model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
 
-	# Setup the loss and optimizer
-	criterion = nn.CrossEntropyLoss()
-	optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate, momentum = 0.8)
+		# Initialize the dataset and data loader (note the +1)
+		dataset = PalindromeDataset(config.input_length+1)
+		data_loader = DataLoader(dataset, config.batch_size, num_workers=1)
 
-	for step, (batch_inputs, batch_targets) in enumerate(data_loader):
+		# Setup the loss and optimizer
+		criterion = nn.CrossEntropyLoss()
+		optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate, momentum = 0.5)
 
-		# Only for time measurement of step through network
-		t1 = time.time()
-		batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
-		optimizer.zero_grad()
-		out = model.forward(batch_inputs)
+		for step, (batch_inputs, batch_targets) in enumerate(data_loader):
 
-		############################################################################
-		# QUESTION: what happens here and why?
-		############################################################################
-		torch.nn.utils.clip_grad_norm(model.parameters(), max_norm=config.max_norm)
-		############################################################################
+			# Only for time measurement of step through network
+			t1 = time.time()
+			batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
+			optimizer.zero_grad()
+			out = model.forward(batch_inputs)
 
-		loss = criterion(out, batch_targets)
-		loss.backward()
-		optimizer.step()
-		loss.retain_grad()
+			############################################################################
+			# QUESTION: what happens here and why?
+			############################################################################
+			torch.nn.utils.clip_grad_norm(model.parameters(), max_norm=config.max_norm)
+			############################################################################
 
-		accuracy = calc_accuracy(out, batch_targets)
-
-		# Just for time measurement
-		t2 = time.time()
-		examples_per_second = config.batch_size/float(t2-t1)
-
-		if step % 10 == 0 and print_eval:
-
-			print("[{}] Train Step {:04d}/{:04d}, Batch Size = {}, Examples/Sec = {:.2f}, "
-				  "Accuracy = {:.2f}, Loss = {:.3f}".format(
-					datetime.now().strftime("%Y-%m-%d %H:%M"), step,
-					config.train_steps, config.batch_size, examples_per_second,
-					accuracy, loss
-			))
-
-		# Check if model is converged, based on 5 batches.
-		if step % 100 == 0 and step > config.input_length*100:
-			test_accuracies = []
-			counter = 0
-			for counter, (batch_inputs, batch_targets) in enumerate(data_loader):
-				batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
-				out = model.forward(batch_inputs)
-				test_accuracies.append(calc_accuracy(out, batch_targets))
-				if counter > 7: 
-					break
-
-			if np.std(test_accuracies) < 0.015:
-				mean_acc = np.mean(test_accuracies)
-
-				print('Training converged with accuracy:', mean_acc)
-				return mean_acc
+			loss = criterion(out, batch_targets)
+			loss.backward(retain_graph=True)
 
 
-
-
-		if step == config.train_steps:
-			# If you receive a PyTorch data-loader error, check this bug report:
-			# https://github.com/pytorch/pytorch/pull/9655
+			for index, layer in enumerate(model.all_gradients):
+				gradient_norms[i].append(torch.norm(torch.autograd.grad(loss,layer,retain_graph=True)[0]))
 			break
+	print(gradient_norms)
+	plt.plot(gradient_norms[0], label="Gradient norms of all timesteps for RNN")
+	plt.plot(gradient_norms[1], label="Gradient norms of all timesteps for LSTM")
+	plt.xlabel("timesteps")
+	plt.ylabel("gradient magnitude")
+	plt.legend()
+	plt.show()
 
-	print('Done training.')
-	return accuracy
 
  ################################################################################
  ################################################################################

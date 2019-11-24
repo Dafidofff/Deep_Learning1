@@ -46,9 +46,11 @@ class VanillaRNN(nn.Module):
 	def forward(self, x):
 		h_t = self.h_0
 		x = x.to(torch.float64)
+		self.all_gradients = []
 
 		for i,step in enumerate(range(self.seq_length)):
 			h_t = torch.tanh(x[:,step,:] @ self.W_hx + h_t @ self.W_hh + self.B_h)
+			self.all_gradients.append(h_t.requires_grad_(True))
 
 		return (h_t @ self.W_ph).add(self.B_p)
 

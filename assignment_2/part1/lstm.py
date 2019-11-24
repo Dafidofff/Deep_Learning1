@@ -64,6 +64,7 @@ class LSTM(nn.Module):
 		h_t = self.h_0
 		c_t = self.c_0
 		x = x.to(torch.float64)
+		self.all_gradients = []
 
 		for step in range(self.seq_length):
 			g_t = torch.tanh(x[:,step,:] @ self.W_gx + h_t @ self.W_gh + self.B_g)
@@ -73,5 +74,6 @@ class LSTM(nn.Module):
 
 			c_t = g_t * i_t + c_t * f_t
 			h_t = torch.tanh(c_t) * o_t
+			self.all_gradients.append(h_t.requires_grad_(True))
 
 		return (h_t @ self.W_ph).add(self.B_p)
