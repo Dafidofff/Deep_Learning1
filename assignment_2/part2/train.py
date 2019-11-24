@@ -64,7 +64,7 @@ def train(config):
             # Only for time measurement of step through network
             t1 = time.time()
             one_hot_batch = torch.nn.functional.one_hot(batch_inputs.to(torch.int64), dataset.vocab_size).to(config.device)
-            batch_targets.to(device)
+            batch_targets = batch_targets.to(device)
 
             optimizer.zero_grad()
             out = model.forward(one_hot_batch).to(device)
