@@ -119,7 +119,7 @@ def train(config, print_eval = True):
 			))
 
 		# Check if model is converged, based on 5 batches.
-		if step % 100 == 0 and step > config.seq_length*60:
+		if step % 100 == 0 and step > config.seq_length*100:
 			test_accuracies = []
 			counter = 0
 			for counter, (batch_inputs, batch_targets) in enumerate(data_loader):
