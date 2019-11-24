@@ -43,7 +43,7 @@ def train(config):
 
     # Initialize the device which to run the model on
     # device = torch.device(config.device)
-    config.device = "cpu"
+    config.device = "gpu"
     device = torch.device(config.device)
 
     # Initialize the dataset and data loader (note the +1)
