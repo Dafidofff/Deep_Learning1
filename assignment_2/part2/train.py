@@ -51,10 +51,10 @@ def train(config):
     data_loader = DataLoader(dataset, config.batch_size, num_workers=1)
 
     # Initialize the model that we are going to use
-    model = TextGenerationModel(config.batch_size, config.seq_length, dataset.vocab_size, config.lstm_num_hidden, config.lstm_num_layers, config.device).to(config.device)  
+    model = TextGenerationModel(config.batch_size, config.seq_length, dataset.vocab_size, config.lstm_num_hidden, config.lstm_num_layers, config.device).to(device)  
 
     # Setup the loss and optimizer
-    criterion = nn.CrossEntropyLoss().to(config.device)
+    criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate, momentum=0.5)
 
     steps = 0
@@ -64,10 +64,10 @@ def train(config):
             # Only for time measurement of step through network
             t1 = time.time()
             one_hot_batch = torch.nn.functional.one_hot(batch_inputs.to(torch.int64), dataset.vocab_size).to(config.device)
-            batch_targets.to(config.device)
+            batch_targets.to(device)
 
             optimizer.zero_grad()
-            out = model.forward(one_hot_batch).to(config.device)
+            out = model.forward(one_hot_batch).to(device)
             
             loss = criterion(out, batch_targets)
             loss.backward()
