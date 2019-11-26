@@ -22,8 +22,9 @@ import time
 from datetime import datetime
 import argparse
 
-from random import randint
 import numpy as np
+from random import randint
+import matplotlib.pyplot as plt
 
 import torch
 import torch.nn as nn
@@ -38,7 +39,8 @@ from model import TextGenerationModel
 ################################################################################
 
 def calc_accuracy(predictions, targets):
-  return (predictions.max(axis=1)[1].cpu().numpy() == targets.cpu().numpy()).sum()/predictions.shape[0]
+    acc = (predictions.max(axis=1)[1].cpu().numpy() == targets.cpu().numpy()).sum()/(predictions.shape[0] * predictions.shape[2])
+    return acc * 100
 
 def generate_sentence(model, seq_length, vocab_size, device):
     model.eval()
@@ -67,9 +69,10 @@ def train(config):
 
     # Setup the loss and optimizer
     criterion = nn.CrossEntropyLoss().to(device)
-    optimizer = optim.RMSprop(model.parameters(), , alpha = 0.99, eps = 1e-6, lr=config.learning_rate, weight_decay = 0.1, momentum = 0.8)
+    optimizer = optim.RMSprop(model.parameters(), alpha=0.99, eps=1e-6, lr=config.learning_rate, momentum=0.8)
 
     steps = 0
+    losses, accuracies = [], []
     # while steps <= config.train_steps:
     for step, (batch_inputs, batch_targets) in enumerate(data_loader):
 
@@ -98,7 +101,7 @@ def train(config):
             print(f"({datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}), Train Step: {step}/{config.train_steps}, Batch_size: {config.batch_size}, E/sec: {int(examples_per_second)}, Acc: {accuracy}, Loss: {float(loss)}")
             
             first_letter = [batch_inputs[0,0].item()]
-            print("Target string:", dataset.convert_to_string(first_letter + batch_targets[0,:].tolist()).replace('\n',''))
+            print("Target string   :", dataset.convert_to_string(first_letter + batch_targets[0,:].tolist()).replace('\n',''))
             print("Predicted string:", dataset.convert_to_string(first_letter + torch.max(out,2)[1][0,:].tolist()).replace('\n',''))
 
         # steps += 1
@@ -109,16 +112,23 @@ def train(config):
             print("---------------------------")
             print("Random generated sentence:", dataset.convert_to_string(generated_sent))
             print("---------------------------")
+
+            accuracies.append(accuracy)
+            losses.append(loss.item())
             
 
         # if step % config.train_steps == 0:
         #     # If you receive a PyTorch data-loader error, check this bug report:
         #     # https://github.com/pytorch/pytorch/pull/9655
-        #     break
-            
+        #     break  
 
-            
-    # torch.save(model.state_dict(), './models/Lorde1_.p')
+    print(accuracies, losses)
+    plt.plot(accuracies, label='accuracy')
+    plt.plot(losses, label='loss')
+    plt.legend()
+    plt.show()
+
+    torch.save(model.state_dict(), './models/fairy_tales_1.p')
     print('Done training.')
 
 
@@ -150,8 +160,8 @@ if __name__ == "__main__":
 
     # Misc params
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
-    parser.add_argument('--print_every', type=int, default=50, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=100, help='How often to sample from the model')
+    parser.add_argument('--print_every', type=int, default=200, help='How often to print training progress')
+    parser.add_argument('--sample_every', type=int, default=200, help='How often to sample from the model')
 
     config = parser.parse_args()
 
