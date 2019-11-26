@@ -74,7 +74,6 @@ class LSTM(nn.Module):
 
 			c_t = g_t * i_t + c_t * f_t
 			h_t = torch.tanh(c_t) * o_t
-			# self.all_gradients.append(h_t.requires_grad_(True))
-			self.all_gradients.append(h_t.retain_grad())
+			self.all_gradients.append(h_t.requires_grad_(True))
 
 		return (h_t @ self.W_ph).add(self.B_p)

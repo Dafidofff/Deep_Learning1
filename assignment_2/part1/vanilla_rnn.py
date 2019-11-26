@@ -50,8 +50,6 @@ class VanillaRNN(nn.Module):
 
 		for i,step in enumerate(range(self.seq_length)):
 			h_t = torch.tanh(x[:,step,:] @ self.W_hx + h_t @ self.W_hh + self.B_h)
-			# self.all_gradients.append(h_t.requires_grad_(True))
-			self.all_gradients.append(h_t.retain_grad())
-		# print(self.all_gradients)
+			self.all_gradients.append(h_t.requires_grad_(True))
 		return (h_t @ self.W_ph).add(self.B_p)
 

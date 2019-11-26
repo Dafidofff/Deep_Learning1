@@ -44,8 +44,9 @@ def generate_sentence(model, seq_length, vocab_size, device):
     model.eval()
     sent = [randint(0,vocab_size-1)]
     for _ in range(seq_length):
-        torch_sent = torch.nn.functional.one_hot(torch.from_numpy(np.array(sent)).to(torch.int64), vocab_size).to(torch.float).to(device)
-        out = model.forward(torch.unsqueeze(torch_sent,0))
+        torch_sent = torch.from_numpy(np.array(sent)).to(torch.int64)
+        one_hot_sent = torch.nn.functional.one_hot(torch_sent, vocab_size).to(torch.float64).to(device)
+        out = model.forward(torch.unsqueeze(one_hot_sent,0))
         sent.append(int(torch.argmax(out[0,-1,:])))
     model.train()
     return sent   
@@ -66,56 +67,57 @@ def train(config):
 
     # Setup the loss and optimizer
     criterion = nn.CrossEntropyLoss().to(device)
-    optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate, momentum=0.5)
+    optimizer = optim.RMSprop(model.parameters(), , alpha = 0.99, eps = 1e-6, lr=config.learning_rate, weight_decay = 0.1, momentum = 0.8)
 
     steps = 0
-    while steps <= config.train_steps:
-        for step, (batch_inputs, batch_targets) in enumerate(data_loader):
+    # while steps <= config.train_steps:
+    for step, (batch_inputs, batch_targets) in enumerate(data_loader):
 
-            # Only for time measurement of step through network
-            t1 = time.time()
-            one_hot_batch = torch.nn.functional.one_hot(batch_inputs.to(torch.int64), dataset.vocab_size).to(config.device)
-            batch_targets = batch_targets.to(device)
+        # Only for time measurement of step through network
+        t1 = time.time()
+        one_hot_batch = torch.nn.functional.one_hot(batch_inputs.to(torch.int64), dataset.vocab_size).to(config.device)
+        batch_targets = batch_targets.to(device)
 
-            optimizer.zero_grad()
-            out = model.forward(one_hot_batch).to(device)
+        optimizer.zero_grad()
+        out = model.forward(one_hot_batch).to(device)
+        tempratured_out = out * 0.5
+        out_perm = out.permute(0,2,1)
+        
+        loss = criterion(out_perm, batch_targets)
+        loss.backward()
+        optimizer.step()
+        loss.retain_grad()
+
+        accuracy = calc_accuracy(out_perm, batch_targets)
+
+        # Just for time measurement
+        t2 = time.time()
+        examples_per_second = config.batch_size/float(t2-t1)
+
+        if step % config.print_every == 0:
+            print(f"({datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}), Train Step: {step}/{config.train_steps}, Batch_size: {config.batch_size}, E/sec: {int(examples_per_second)}, Acc: {accuracy}, Loss: {float(loss)}")
             
-            loss = criterion(out, batch_targets)
-            loss.backward()
-            optimizer.step()
-            loss.retain_grad()
+            first_letter = [batch_inputs[0,0].item()]
+            print("Target string:", dataset.convert_to_string(first_letter + batch_targets[0,:].tolist()).replace('\n',''))
+            print("Predicted string:", dataset.convert_to_string(first_letter + torch.max(out,2)[1][0,:].tolist()).replace('\n',''))
 
-            accuracy = calc_accuracy(out, batch_targets)
+        # steps += 1
 
-            # Just for time measurement
-            t2 = time.time()
-            examples_per_second = config.batch_size/float(t2-t1)
+        if step % config.sample_every == 0:
+            # Generate some sentences by sampling from the model
+            generated_sent = generate_sentence(model, config.seq_length, dataset.vocab_size, config.device)
+            print("---------------------------")
+            print("Random generated sentence:", dataset.convert_to_string(generated_sent))
+            print("---------------------------")
+            
 
-            if step % config.print_every == 0:
-                print(f"({datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}), Train Step: {steps}/{config.train_steps}, Batch_size: {config.batch_size}, E/sec: {int(examples_per_second)}, Acc: {accuracy}, Loss: {float(loss)}")
-                # first_letter = dataset.convert_to_string([batch_inputs[0,0].item()])
-                # one_hot_letter = torch.nn.functional.one_hot(batch_inputs[0,0].to(torch.int64), dataset.vocab_size).to(config.device)
+        # if step % config.train_steps == 0:
+        #     # If you receive a PyTorch data-loader error, check this bug report:
+        #     # https://github.com/pytorch/pytorch/pull/9655
+        #     break
+            
 
-                # target_string = dataset.convert_to_string([item.item() for item in batch_targets[0,:]])
-                # target_string = target_string.replace('\n', ' ')
-
-                # out_string = model.forward(one_hot_letter).to(device)
-                # print(output_string)
-
-            if step % config.sample_every == 0:
-                # Generate some sentences by sampling from the model
-                generated_sent = generate_sentence(model, config.seq_length, dataset.vocab_size, config.device)
-                print(generated_sent)
-                print(dataset.convert_to_string(generated_sent))
-                
-
-            if step % config.train_steps == 0:
-                # If you receive a PyTorch data-loader error, check this bug report:
-                # https://github.com/pytorch/pytorch/pull/9655
-                break
-            steps += 1
-            break
-        break
+            
     # torch.save(model.state_dict(), './models/Lorde1_.p')
     print('Done training.')
 

@@ -49,4 +49,4 @@ class TextGenerationModel(nn.Module):
 		out_temp, states = self.LSTM(x)
 		out = self.linear(out_temp)
 
-		return out.permute(0,2,1)
+		return out

@@ -85,7 +85,7 @@ def train(config, print_eval = True):
 
 	# Setup the loss and optimizer
 	criterion = nn.CrossEntropyLoss()
-	optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate, momentum = 0.8)
+	optimizer = optim.RMSprop(model.parameters(), alpha = 0.99, eps = 1e-6, lr=config.learning_rate, weight_decay = 0.1, momentum = 0.8)
 
 	for step, (batch_inputs, batch_targets) in enumerate(data_loader):
 
