@@ -40,7 +40,7 @@ class LSTM(nn.Module):
 
 		self.B_g = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
 		self.B_i = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
-		self.B_f = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
+		self.B_f = nn.Parameter(torch.zeros(num_hidden).to(torch.float64))
 		self.B_o = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
 		
 		self.W_ph = nn.Parameter(torch.randn(num_hidden, num_classes).to(torch.float64))

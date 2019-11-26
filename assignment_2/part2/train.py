@@ -42,8 +42,8 @@ def calc_accuracy(predictions, targets):
 def train(config):
 
     # Initialize the device which to run the model on
-    # device = torch.device(config.device)
     config.device = "cuda:0"
+    config.device = "cpu"
     device = torch.device(config.device)
 
     # Initialize the dataset and data loader (note the +1)
@@ -80,33 +80,31 @@ def train(config):
             t2 = time.time()
             examples_per_second = config.batch_size/float(t2-t1)
 
-
             if step % config.print_every == 0:
                 print(f"({datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}), Train Step: {steps}/{config.train_steps}, Batch_size: {config.batch_size}, E/sec: {int(examples_per_second)}, Acc: {accuracy}, Loss: {float(loss)}")
-                # print("[{}] Train Step {:04d}/{:04d}, Batch Size = {}, Examples/Sec = {:.2f}, "
-                #       "Accuracy = , Loss = {:.3f}".format(
-                #         datetime.now().strftime("%Y-%m-%d %H:%M"), step,
-                #         config.train_steps, config.batch_size, examples_per_second,
-                #         accuracy, loss
-                # ))
-                # first_letter = dataset.convert_to_string([batch_inputs[0,0].item()])
-                # target_string = dataset.convert_to_string([item.item() for item in batch_targets[0,:]])
-                # target_string = target_string.replace('\n', ' ')
+                first_letter = dataset.convert_to_string([batch_inputs[0,0].item()])
+                one_hot_letter = torch.nn.functional.one_hot(batch_inputs[0,0].to(torch.int64), dataset.vocab_size).to(config.device)
 
-                # print(target_string)
-                # print(f"original string: \"{dataset.convert_to_string(first_letter + batch_targets[0,:].tolist())}\"".replace('\n',''))
-                # print(f"predicted string:\"{dataset.convert_to_string(first_letter + torch.max(predictions_test,2)[1][0,:].tolist())}\"".replace('\n',''))
+                target_string = dataset.convert_to_string([item.item() for item in batch_targets[0,:]])
+                target_string = target_string.replace('\n', ' ')
+
+                out_string = model.forward(one_hot_letter).to(device)
+                print(output_string)
 
             if step % config.sample_every == 0:
                 # Generate some sentences by sampling from the model
-                pass
 
-            if step == config.train_steps:
+                # print(dataset.convert_to_string(out_string))
+                
+
+            if step % config.train_steps == 0:
                 # If you receive a PyTorch data-loader error, check this bug report:
                 # https://github.com/pytorch/pytorch/pull/9655
                 break
             steps += 1
-    torch.save(model.state_dict(), './models/Lorde1_.p')
+            break
+        break
+    # torch.save(model.state_dict(), './models/Lorde1_.p')
     print('Done training.')
 
 

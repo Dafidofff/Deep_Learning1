@@ -121,17 +121,17 @@ def train(config, print_eval = True):
 			))
 
 		# Check if model is converged, based on 5 batches.
-		if step % 100 == 0 and step > config.input_length*100:
+		if step % 100 == 0 and step > config.input_length*70:
 			test_accuracies = []
 			counter = 0
 			for counter, (batch_inputs, batch_targets) in enumerate(data_loader):
 				batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
 				out = model.forward(batch_inputs)
 				test_accuracies.append(calc_accuracy(out, batch_targets))
-				if counter > 7: 
+				if counter > 5: 
 					break
 
-			if np.std(test_accuracies) < 0.015:
+			if np.std(test_accuracies) < 0.01:
 				mean_acc = np.mean(test_accuracies)
 
 				print('Training converged with accuracy:', mean_acc)
