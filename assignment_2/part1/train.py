@@ -55,7 +55,7 @@ def evaluate_model(config):
 		random.seed(seed)
 		accuracies.append([])
 		for p_len in palindrome_lengths:
-			config.seq_length = p_len
+			config.input_length = p_len
 
 			# Train the model
 			accuracies[i].append(train(config, print_eval=False))
@@ -85,7 +85,7 @@ def train(config, print_eval = True):
 
 	# Setup the loss and optimizer
 	criterion = nn.CrossEntropyLoss()
-	optimizer = optim.RMSprop(model.parameters(), alpha = 0.99, eps = 1e-6, lr=config.learning_rate, weight_decay = 0.1, momentum = 0.8)
+	optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate)
 
 	for step, (batch_inputs, batch_targets) in enumerate(data_loader):
 
