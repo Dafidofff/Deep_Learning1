@@ -49,7 +49,7 @@ import sys
 
 def evaluate_model(config):
 	seeds = [13,69,420]
-	palindrome_lengths = [5,10,15,20,25,30,35,40]
+	palindrome_lengths = [5,10,15,20,25,30,35,40,45,50]
 	accuracies = []
 	for i, seed in enumerate(seeds):
 		random.seed(seed)
