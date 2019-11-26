@@ -49,7 +49,7 @@ import sys
 
 def evaluate_model(config):
 	seeds = [13,69,420]
-	palindrome_lengths = [5,10,15,20,25,30,35,40,45,50]
+	palindrome_lengths = [5,10,15,20,25,30,35,40,45,50,55,60,65,70]
 	accuracies = []
 	for i, seed in enumerate(seeds):
 		random.seed(seed)
@@ -58,7 +58,7 @@ def evaluate_model(config):
 			config.seq_length = p_len
 
 			# Train the model
-			accuracies[i].append(train(config, print_eval=True))
+			accuracies[i].append(train(config, print_eval=False))
 	print(accuracies)
 	return accuracies
 
