@@ -1,0 +1,270 @@
+ERROR: Unable to locate a modulefile for 'eb'
+Initialize dataset with 550591 characters, 91 unique.
+(19:44:7), Train Step: 0/1000000.0, Batch_size: 64, E/sec: 1257, Acc: 0.6770833333333334, Loss: 4.497961778111472
+Target string   :  is sitting upon them and hatch
+Predicted string:  #########,,######,,,,,,,,,
+---------------------------
+Random generated sentence: .                              
+---------------------------
+(19:44:11), Train Step: 200/1000000.0, Batch_size: 64, E/sec: 3844, Acc: 39.6875, Loss: 2.133441166360688
+Target string   : l her master did not come, Gret
+Predicted string: lete  tes  r tol to  tore  aoee
+---------------------------
+Random generated sentence: ( the the the the the the the t
+---------------------------
+(19:44:15), Train Step: 400/1000000.0, Batch_size: 64, E/sec: 3938, Acc: 44.53125, Loss: 1.9259459219989516
+Target string   : mselves over some game of play‚
+Predicted string: me reer tner th e tore tf taar 
+---------------------------
+Random generated sentence: ô ‚ÄòI was her her her her her 
+---------------------------
+(19:44:18), Train Step: 600/1000000.0, Batch_size: 64, E/sec: 3949, Acc: 48.645833333333336, Loss: 1.7648191041730634
+Target string   : d shakes the fir-apples down.‚Ä
+Predicted string: d toete  toe wondc pee ttown  Ä
+---------------------------
+Random generated sentence: ] Then the was to the was to th
+---------------------------
+(19:44:22), Train Step: 800/1000000.0, Batch_size: 64, E/sec: 3951, Acc: 50.989583333333336, Loss: 1.670962295568046
+Target string   : said no, they had found nothing
+Predicted string: s id to  ahe  wad tornd tot eng
+---------------------------
+Random generated sentence: 5 and said the with the with th
+---------------------------
+(19:44:25), Train Step: 1000/1000000.0, Batch_size: 64, E/sec: 3854, Acc: 54.01041666666667, Loss: 1.597149838990348
+Target string   : , and gave him plentyto eat an
+Predicted string: , and sove tim auaat  ah tvt tn
+---------------------------
+Random generated sentence: f the stone the stone the stone
+---------------------------
+(19:44:29), Train Step: 1200/1000000.0, Batch_size: 64, E/sec: 3926, Acc: 53.22916666666667, Loss: 1.5205231800415726
+Target string   : not see each other they were sa
+Predicted string: ndthwhe tvth anher the  wane th
+---------------------------
+Random generated sentence: ‚Äô ‚ÄòI will she was the water
+---------------------------
+(19:44:33), Train Step: 1400/1000000.0, Batch_size: 64, E/sec: 3937, Acc: 54.166666666666664, Loss: 1.5641759958673516
+Target string   : s he went he saw two asses in t
+Predicted string: stiaawant terwaw tho w   dstn t
+---------------------------
+Random generated sentence: was a will be the stone and sai
+---------------------------
+(19:44:36), Train Step: 1600/1000000.0, Batch_size: 64, E/sec: 3829, Acc: 54.79166666666667, Loss: 1.5270293976534766
+Target string   : ed. Scarcely, however,had he t
+Predicted string: e   Toaleh y  aewever  aev te w
+---------------------------
+Random generated sentence: òI will she was to the wife of 
+---------------------------
+(19:44:40), Train Step: 1800/1000000.0, Batch_size: 64, E/sec: 3831, Acc: 56.770833333333336, Loss: 1.437863575601805
+Target string   : an put the bread in.‚Äô And onc
+Predicted string: andtlt the sooad tn ‚Äô ‚nd tn 
+---------------------------
+Random generated sentence: You will she was to the should 
+---------------------------
+(19:44:44), Train Step: 2000/1000000.0, Batch_size: 64, E/sec: 3877, Acc: 58.229166666666664, Loss: 1.377006176680818
+Target string   :  went up to the youth, embraced
+Predicted string:  tart tp to the wounh  aabline 
+---------------------------
+Random generated sentence: was the streated the streated t
+---------------------------
+(19:44:47), Train Step: 2200/1000000.0, Batch_size: 64, E/sec: 3949, Acc: 54.01041666666667, Loss: 1.5027836007823672
+Target string   : ÄòI have them, they shall not e
+Predicted string: ÄôI wave nhe   ahe  waoll sot g
+---------------------------
+Random generated sentence: n the streamed the streamed to 
+---------------------------
+(19:44:51), Train Step: 2400/1000000.0, Batch_size: 64, E/sec: 3891, Acc: 59.010416666666664, Loss: 1.383813684881202
+Target string   : the water was quite black and m
+Predicted string: the woyer,tas auete aeock and t
+---------------------------
+Random generated sentence: You should not to the world to 
+---------------------------
+(19:44:55), Train Step: 2600/1000000.0, Batch_size: 64, E/sec: 3977, Acc: 58.177083333333336, Loss: 1.3389613928352004
+Target string   : ot faithful to him, and wished 
+Predicted string: o  worrieul ah tim  and shth d 
+---------------------------
+Random generated sentence: d the starried the starried the
+---------------------------
+(19:44:58), Train Step: 2800/1000000.0, Batch_size: 64, E/sec: 3950, Acc: 57.1875, Loss: 1.3787184483247856
+Target string   :  bridegroom sat at the top, wit
+Predicted string:  teine sovm tti h  the cro  ahl
+---------------------------
+Random generated sentence: Quickly the second that he was 
+---------------------------
+(19:45:2), Train Step: 3000/1000000.0, Batch_size: 64, E/sec: 3840, Acc: 58.802083333333336, Loss: 1.3495884663907243
+Target string   :  this way and that way, and who
+Predicted string:  thes wiy tnd shet tas  and sae
+---------------------------
+Random generated sentence: ve the work was so said, ‚ÄòWha
+---------------------------
+(19:45:6), Train Step: 3200/1000000.0, Batch_size: 64, E/sec: 3896, Acc: 58.958333333333336, Loss: 1.327051417107979
+Target string   :  very hard, and said,‚ÄòOnly t
+Predicted string:  tery meid  and thid, ‚ÄòWhey t
+---------------------------
+Random generated sentence: Queen the start the start the s
+---------------------------
+(19:45:9), Train Step: 3400/1000000.0, Batch_size: 64, E/sec: 3892, Acc: 57.8125, Loss: 1.329716963416736
+Target string   :  not turn out of the way, but w
+Predicted string:  tot thrnetft of the wot  aut t
+---------------------------
+Random generated sentence: VEN
+
+There was a white heard th
+---------------------------
+(19:45:13), Train Step: 3600/1000000.0, Batch_size: 64, E/sec: 3935, Acc: 60.416666666666664, Loss: 1.3017591291445387
+Target string   : ment and weep over the loss of
+Predicted string: me t ond sanp tfer the wivt af 
+---------------------------
+Random generated sentence: and said: ‚ÄòI have not stretch
+---------------------------
+(19:45:17), Train Step: 3800/1000000.0, Batch_size: 64, E/sec: 3989, Acc: 60.20833333333333, Loss: 1.273676189691735
+Target string   : d to ask advice.‚ÄôThe prince 
+Predicted string: d th t k tndice.‚Äô henbrinces
+---------------------------
+Random generated sentence: or the world of the world of th
+---------------------------
+(19:45:20), Train Step: 4000/1000000.0, Batch_size: 64, E/sec: 3958, Acc: 59.635416666666664, Loss: 1.3208965653048366
+Target string   : ful time! If I did but know wha
+Predicted string: f l tome ‚w  t wod nut teow the
+---------------------------
+Random generated sentence: Now where the search of the sea
+---------------------------
+(19:45:24), Train Step: 4200/1000000.0, Batch_size: 64, E/sec: 3921, Acc: 59.375, Loss: 1.330906642013373
+Target string   :  such a prize!‚Äô ‚ÄòWell,‚Äô s
+Predicted string:  tach a ciine ‚Äô ‚ÄòIh l, Äô s
+---------------------------
+Random generated sentence: VES LITHTICLEENGIANT LITTLE RES
+---------------------------
+(19:45:28), Train Step: 4400/1000000.0, Batch_size: 64, E/sec: 3842, Acc: 61.458333333333336, Loss: 1.2746413184817975
+Target string   : the fire, and she tried the lip
+Predicted string: the sore  and sae woeed toe sit
+---------------------------
+Random generated sentence: 2. The man were the cook to the
+---------------------------
+(19:45:31), Train Step: 4600/1000000.0, Batch_size: 64, E/sec: 3889, Acc: 60.15625, Loss: 1.2999983117022285
+Target string   : lders, and I will raise up the 
+Predicted string: l  r   and t will nevnedtp toe 
+---------------------------
+Random generated sentence: Ô and said: ‚ÄòIt is not stone 
+---------------------------
+(19:45:35), Train Step: 4800/1000000.0, Batch_size: 64, E/sec: 3934, Acc: 61.66666666666667, Loss: 1.2350014516529773
+Target string   : nd hurried down the steps again
+Predicted string: nd tentyed town toe seaps onain
+---------------------------
+Random generated sentence: re the second day the second da
+---------------------------
+(19:45:38), Train Step: 5000/1000000.0, Batch_size: 64, E/sec: 3937, Acc: 60.729166666666664, Loss: 1.289281586194878
+Target string   : there,‚Äô shethought, ‚ÄòI may
+Predicted string: the e  Äô sae soought  aÄòI way
+---------------------------
+Random generated sentence: !‚Äô said the sea, ‚ÄòI will no
+---------------------------
+(19:45:42), Train Step: 5200/1000000.0, Batch_size: 64, E/sec: 3848, Acc: 60.78125, Loss: 1.295175199066922
+Target string   : ers, he sat himself down to his
+Predicted string: e ee ae saw dimself aown ao tis
+---------------------------
+Random generated sentence: 7 will soon find the streets wh
+---------------------------
+(19:45:46), Train Step: 5400/1000000.0, Batch_size: 64, E/sec: 3872, Acc: 60.62499999999999, Loss: 1.2882964279228069
+Target string   : etel? What do you mean bythat?
+Predicted string: e  l ‚Ihat ao you aa ntay thet 
+---------------------------
+Random generated sentence: ll the world was a stone of the
+---------------------------
+(19:45:49), Train Step: 5600/1000000.0, Batch_size: 64, E/sec: 3934, Acc: 61.04166666666667, Loss: 1.2422396190819573
+Target string   : ng that I did it,‚Äô she though
+Predicted string: nd thet t wod nt  Äô sae shough
+---------------------------
+Random generated sentence: 0 should be a fine and said: ‚Ä
+---------------------------
+(19:45:53), Train Step: 5800/1000000.0, Batch_size: 64, E/sec: 3917, Acc: 62.5, Loss: 1.2056850588482684
+Target string   : and laid herin her bed.Next 
+Predicted string: and seid her sn tir hea, Toxt 
+---------------------------
+Random generated sentence: When the king said to the serva
+---------------------------
+(19:45:57), Train Step: 6000/1000000.0, Batch_size: 64, E/sec: 3861, Acc: 59.895833333333336, Loss: 1.27955687465538
+Target string   : ne quite as you seem to think,‚
+Predicted string: nd auite sn tou whe eth thesk  
+---------------------------
+Random generated sentence: quire, and said, ‚ÄòI will give
+---------------------------
+(19:46:0), Train Step: 6200/1000000.0, Batch_size: 64, E/sec: 3934, Acc: 62.135416666666664, Loss: 1.208740000804223
+Target string   :  were there already, and welcom
+Predicted string:  tire she e anleady  and thnlom
+---------------------------
+Random generated sentence: ) as he was a great son stopped
+---------------------------
+(19:46:4), Train Step: 6400/1000000.0, Batch_size: 64, E/sec: 3959, Acc: 60.88541666666667, Loss: 1.2561847133417998
+Target string   :  stands an old tree, cut it dow
+Predicted string:  tarndi andold waee  alr ot iow
+---------------------------
+Random generated sentence: ù and the seventh she had said:
+---------------------------
+(19:46:8), Train Step: 6600/1000000.0, Batch_size: 64, E/sec: 3948, Acc: 61.875, Loss: 1.2302089975752741
+Target string   : en of us will fall at every blo
+Predicted string: e  tn ts titl bill as tvery deo
+---------------------------
+Random generated sentence: Lina is a great man said, ‚ÄòI 
+---------------------------
+(19:46:11), Train Step: 6800/1000000.0, Batch_size: 64, E/sec: 3944, Acc: 61.66666666666667, Loss: 1.1938815436013166
+Target string   : ranch, and there came a loud no
+Predicted string: r gte  and the e wame tnlind to
+---------------------------
+Random generated sentence: ª with the wine who had to the 
+---------------------------
+(19:46:15), Train Step: 7000/1000000.0, Batch_size: 64, E/sec: 3932, Acc: 61.145833333333336, Loss: 1.1930432870407097
+Target string   : e grass and fell asleep.Whilst
+Predicted string: e woons tnd toll asleep, helst
+---------------------------
+Random generated sentence: HE THE GOLDEN GOOSE PARTLET AND
+---------------------------
+(19:46:19), Train Step: 7200/1000000.0, Batch_size: 64, E/sec: 3850, Acc: 59.68750000000001, Loss: 1.265605521549039
+Target string   : ing eversince.End of Pro
+Predicted string: ing tverytatge ‚TTBcicf tro
+---------------------------
+Random generated sentence: ?‚Äô ‚ÄòI will not stay you a l
+---------------------------
+(19:46:22), Train Step: 7400/1000000.0, Batch_size: 64, E/sec: 3867, Acc: 63.38541666666667, Loss: 1.1606633634360757
+Target string   : er,‚Äô said the man, ‚Äòat the 
+Predicted string: e   Äô said the man  ‚Äòwn lhe 
+---------------------------
+Random generated sentence: , and the seven said: ‚ÄòI have
+---------------------------
+(19:46:26), Train Step: 7600/1000000.0, Batch_size: 64, E/sec: 3926, Acc: 61.61458333333333, Loss: 1.2178647890390428
+Target string   : good use for it.‚Äô So away she
+Predicted string: gh d fnedaor tt ‚Äô ‚o tlay hae
+---------------------------
+Random generated sentence: nd the sparrow was a great many
+---------------------------
+(19:46:30), Train Step: 7800/1000000.0, Batch_size: 64, E/sec: 3897, Acc: 60.9375, Loss: 1.2276929238838565
+Target string   : byfreely sharing Project Guten
+Predicted string: be trie y atolpng oroject Guten
+---------------------------
+Random generated sentence: òI will give you the states of 
+---------------------------
+(19:46:33), Train Step: 8000/1000000.0, Batch_size: 64, E/sec: 3898, Acc: 62.81250000000001, Loss: 1.2022685567782845
+Target string   :  the horse quietly, but be sure
+Predicted string:  the souse wuettly  aut te aere
+---------------------------
+Random generated sentence: ù and the sparrow was a court a
+---------------------------
+(19:46:37), Train Step: 8200/1000000.0, Batch_size: 64, E/sec: 3906, Acc: 63.33333333333333, Loss: 1.1985022210917926
+Target string   : ewheel-barrow, drove it away, 
+Predicted string: e sairlsgorgow, aeave tt wnay  
+---------------------------
+Random generated sentence: So they went on the shore the s
+---------------------------
+(19:46:41), Train Step: 8400/1000000.0, Batch_size: 64, E/sec: 3933, Acc: 63.74999999999999, Loss: 1.17809296001042
+Target string   : hinking that the higher he sat 
+Predicted string: hemging ohat hheysulhesesaahai 
+---------------------------
+Random generated sentence: 3. ‚ÄòI have not you will be a 
+---------------------------
+(19:46:45), Train Step: 8600/1000000.0, Batch_size: 64, E/sec: 3800, Acc: 65.36458333333334, Loss: 1.140515603565732
+Target string   : TICLEER AND PARTLET       1. H
+Predicted string: ThCEEER AND TARTLET,     T  . H
+---------------------------
+Random generated sentence: Fox was a great counsel, and sa
+---------------------------
+[0.67708333333333337, 39.6875, 44.53125, 48.645833333333336, 50.989583333333336, 54.010416666666671, 53.229166666666671, 54.166666666666664, 54.791666666666671, 56.770833333333336, 58.229166666666664, 54.010416666666671, 59.010416666666664, 58.177083333333336, 57.1875, 58.802083333333336, 58.958333333333336, 57.8125, 60.416666666666664, 60.208333333333329, 59.635416666666664, 59.375, 61.458333333333336, 60.15625, 61.666666666666671, 60.729166666666664, 60.78125, 60.624999999999993, 61.041666666666671, 62.5, 59.895833333333336, 62.135416666666664, 60.885416666666671, 61.875, 61.666666666666671, 61.145833333333336, 59.687500000000007, 63.385416666666671, 61.614583333333329, 60.9375, 62.812500000000007, 63.333333333333329, 63.749999999999993, 65.364583333333343] [4.497961778111472, 2.133441166360688, 1.9259459219989516, 1.7648191041730634, 1.670962295568046, 1.597149838990348, 1.5205231800415726, 1.5641759958673516, 1.5270293976534766, 1.437863575601805, 1.377006176680818, 1.5027836007823672, 1.383813684881202, 1.3389613928352004, 1.3787184483247856, 1.3495884663907243, 1.327051417107979, 1.329716963416736, 1.3017591291445387, 1.273676189691735, 1.3208965653048366, 1.330906642013373, 1.2746413184817975, 1.2999983117022285, 1.2350014516529773, 1.289281586194878, 1.295175199066922, 1.2882964279228069, 1.2422396190819573, 1.2056850588482684, 1.27955687465538, 1.208740000804223, 1.2561847133417998, 1.2302089975752741, 1.1938815436013166, 1.1930432870407097, 1.265605521549039, 1.1606633634360757, 1.2178647890390428, 1.2276929238838565, 1.2022685567782845, 1.1985022210917926, 1.17809296001042, 1.140515603565732]
+Done training.
