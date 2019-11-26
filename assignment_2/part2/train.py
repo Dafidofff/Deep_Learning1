@@ -22,6 +22,7 @@ import time
 from datetime import datetime
 import argparse
 
+from random import randint
 import numpy as np
 
 import torch
@@ -38,6 +39,16 @@ from model import TextGenerationModel
 
 def calc_accuracy(predictions, targets):
   return (predictions.max(axis=1)[1].cpu().numpy() == targets.cpu().numpy()).sum()/predictions.shape[0]
+
+def generate_sentence(model, seq_length, vocab_size, device):
+    model.eval()
+    sent = [randint(0,vocab_size-1)]
+    for _ in range(seq_length):
+        torch_sent = torch.nn.functional.one_hot(torch.from_numpy(np.array(sent)).to(torch.int64), vocab_size).to(torch.float).to(device)
+        out = model.forward(torch.unsqueeze(torch_sent,0))
+        sent.append(int(torch.argmax(out[0,-1,:])))
+    model.train()
+    return sent   
 
 def train(config):
 
@@ -82,19 +93,20 @@ def train(config):
 
             if step % config.print_every == 0:
                 print(f"({datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}), Train Step: {steps}/{config.train_steps}, Batch_size: {config.batch_size}, E/sec: {int(examples_per_second)}, Acc: {accuracy}, Loss: {float(loss)}")
-                first_letter = dataset.convert_to_string([batch_inputs[0,0].item()])
-                one_hot_letter = torch.nn.functional.one_hot(batch_inputs[0,0].to(torch.int64), dataset.vocab_size).to(config.device)
+                # first_letter = dataset.convert_to_string([batch_inputs[0,0].item()])
+                # one_hot_letter = torch.nn.functional.one_hot(batch_inputs[0,0].to(torch.int64), dataset.vocab_size).to(config.device)
 
-                target_string = dataset.convert_to_string([item.item() for item in batch_targets[0,:]])
-                target_string = target_string.replace('\n', ' ')
+                # target_string = dataset.convert_to_string([item.item() for item in batch_targets[0,:]])
+                # target_string = target_string.replace('\n', ' ')
 
-                out_string = model.forward(one_hot_letter).to(device)
-                print(output_string)
+                # out_string = model.forward(one_hot_letter).to(device)
+                # print(output_string)
 
             if step % config.sample_every == 0:
                 # Generate some sentences by sampling from the model
-
-                # print(dataset.convert_to_string(out_string))
+                generated_sent = generate_sentence(model, config.seq_length, dataset.vocab_size, config.device)
+                print(generated_sent)
+                print(dataset.convert_to_string(generated_sent))
                 
 
             if step % config.train_steps == 0:

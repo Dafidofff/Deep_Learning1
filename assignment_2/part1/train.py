@@ -56,8 +56,9 @@ def evaluate_model(config):
 		accuracies.append([])
 		for p_len in palindrome_lengths:
 			config.seq_length = p_len
+
 			# Train the model
-			accuracies[i].append(train(config, print_eval=False))
+			accuracies[i].append(train(config, print_eval=True))
 	print(accuracies)
 	return accuracies
 
@@ -123,7 +124,6 @@ def train(config, print_eval = True):
 		# Check if model is converged, based on 5 batches.
 		if step % 100 == 0 and step > config.input_length*70:
 			test_accuracies = []
-			counter = 0
 			for counter, (batch_inputs, batch_targets) in enumerate(data_loader):
 				batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
 				out = model.forward(batch_inputs)

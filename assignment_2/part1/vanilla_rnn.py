@@ -34,8 +34,8 @@ class VanillaRNN(nn.Module):
 		self.W_hx = nn.Parameter(torch.randn(input_dim, num_hidden).to(torch.float64))
 		self.W_hh = nn.Parameter(torch.randn(num_hidden, num_hidden).to(torch.float64))
 		self.W_ph = nn.Parameter(torch.randn(num_hidden, num_classes).to(torch.float64))
-		self.B_h = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
-		self.B_p = nn.Parameter(torch.randn(num_classes).to(torch.float64))
+		self.B_h = nn.Parameter(torch.zeros(num_hidden).to(torch.float64))
+		self.B_p = nn.Parameter(torch.zeros(num_classes).to(torch.float64))
 
 		torch.nn.init.xavier_uniform_(self.W_hx)
 		torch.nn.init.xavier_uniform_(self.W_hh)
@@ -50,7 +50,8 @@ class VanillaRNN(nn.Module):
 
 		for i,step in enumerate(range(self.seq_length)):
 			h_t = torch.tanh(x[:,step,:] @ self.W_hx + h_t @ self.W_hh + self.B_h)
-			self.all_gradients.append(h_t.requires_grad_(True))
-
+			# self.all_gradients.append(h_t.requires_grad_(True))
+			self.all_gradients.append(h_t.retain_grad())
+		# print(self.all_gradients)
 		return (h_t @ self.W_ph).add(self.B_p)
 

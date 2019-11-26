@@ -38,13 +38,13 @@ class LSTM(nn.Module):
 		self.W_fh = nn.Parameter(torch.randn(num_hidden, num_hidden).to(torch.float64))
 		self.W_oh = nn.Parameter(torch.randn(num_hidden, num_hidden).to(torch.float64))
 
-		self.B_g = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
-		self.B_i = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
+		self.B_g = nn.Parameter(torch.ones(num_hidden).to(torch.float64))
+		self.B_i = nn.Parameter(torch.ones(num_hidden).to(torch.float64))
 		self.B_f = nn.Parameter(torch.zeros(num_hidden).to(torch.float64))
-		self.B_o = nn.Parameter(torch.randn(num_hidden).to(torch.float64))
+		self.B_o = nn.Parameter(torch.ones(num_hidden).to(torch.float64))
 		
 		self.W_ph = nn.Parameter(torch.randn(num_hidden, num_classes).to(torch.float64))
-		self.B_p = nn.Parameter(torch.randn(num_classes).to(torch.float64))
+		self.B_p = nn.Parameter(torch.ones(num_classes).to(torch.float64))
 
 		self.h_0 = torch.zeros(num_hidden).to(torch.float64)
 		self.c_0 = torch.zeros(num_hidden).to(torch.float64)
@@ -74,6 +74,7 @@ class LSTM(nn.Module):
 
 			c_t = g_t * i_t + c_t * f_t
 			h_t = torch.tanh(c_t) * o_t
-			self.all_gradients.append(h_t.requires_grad_(True))
+			# self.all_gradients.append(h_t.requires_grad_(True))
+			self.all_gradients.append(h_t.retain_grad())
 
 		return (h_t @ self.W_ph).add(self.B_p)

@@ -89,10 +89,12 @@ def train(config, print_eval = True):
 			loss.backward(retain_graph=True)
 
 
-			for index, layer in enumerate(model.all_gradients):
-				gradient_norms[i].append(torch.norm(torch.autograd.grad(loss,layer,retain_graph=True)[0]))
+			for layer in model.all_gradients:
+				print(layer)
+				# gradient_norms[i].append(torch.norm(torch.autograd.grad(loss,layer,retain_graph=True)[0]))
+				gradient_norms[i].append(torch.norm(layer.grad))
+
 			break
-	print(gradient_norms)
 	plt.plot(gradient_norms[0], label="Gradient norms of all timesteps for RNN")
 	plt.plot(gradient_norms[1], label="Gradient norms of all timesteps for LSTM")
 	plt.xlabel("timesteps")
