@@ -46,8 +46,8 @@ class LSTM(nn.Module):
 		self.W_ph = nn.Parameter(torch.randn(num_hidden, num_classes).to(torch.float64))
 		self.B_p = nn.Parameter(torch.ones(num_classes).to(torch.float64))
 
-		self.h_0 = torch.zeros(num_hidden).to(torch.float64)
-		self.c_0 = torch.zeros(num_hidden).to(torch.float64)
+		self.h_0 = torch.zeros(num_hidden).to(torch.float64).to(device)
+		self.c_0 = torch.zeros(num_hidden).to(torch.float64).to(device)
 		self.seq_length = seq_length
 
 		torch.nn.init.xavier_uniform_(self.W_gx)

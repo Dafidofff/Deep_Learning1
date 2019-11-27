@@ -41,7 +41,7 @@ class VanillaRNN(nn.Module):
 		torch.nn.init.xavier_uniform_(self.W_hh)
 		torch.nn.init.xavier_uniform_(self.W_ph)
 
-		self.h_0 = torch.zeros(num_hidden).to(torch.float64)
+		self.h_0 = torch.zeros(num_hidden).to(torch.float64).to(device)
 
 	def forward(self, x):
 		h_t = self.h_0
