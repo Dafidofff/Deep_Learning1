@@ -95,7 +95,7 @@ def train(config, print_eval = True):
 		batch_targets = batch_targets.to(device)
 		
 		optimizer.zero_grad()
-		out = model.forward(batch_inputs.to(device))
+		out = model.forward(batch_inputs)
 
 		############################################################################
 		# QUESTION: what happens here and why?
