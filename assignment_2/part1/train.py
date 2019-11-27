@@ -75,16 +75,16 @@ def train(config, print_eval = True):
 
 	# Initialize the model that we are going to use
 	if config.model_type == "RNN":
-		model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
+		model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes).to(device)
 	else:
-		model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes)
+		model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes).to(device)
 
 	# Initialize the dataset and data loader (note the +1)
 	dataset = PalindromeDataset(config.input_length+1)
 	data_loader = DataLoader(dataset, config.batch_size, num_workers=1)
 
 	# Setup the loss and optimizer
-	criterion = nn.CrossEntropyLoss()
+	criterion = nn.CrossEntropyLoss().to(device)
 	optimizer = optim.RMSprop(model.parameters(), lr=config.learning_rate)
 
 	for step, (batch_inputs, batch_targets) in enumerate(data_loader):
