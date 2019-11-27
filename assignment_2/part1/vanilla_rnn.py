@@ -45,7 +45,7 @@ class VanillaRNN(nn.Module):
 
 	def forward(self, x):
 		h_t = self.h_0
-		x = x.to(torch.float64)
+		x = x.to(torch.float64).to(self.device)
 		self.all_gradients = []
 
 		for i,step in enumerate(range(self.seq_length)):
