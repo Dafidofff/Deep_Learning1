@@ -91,7 +91,9 @@ def train(config, print_eval = True):
 
 		# Only for time measurement of step through network
 		t1 = time.time()
-		batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10)
+		batch_inputs = torch.nn.functional.one_hot(batch_inputs.to(torch.int64),10).to(device)
+		batch_targets = batch_targets.to(device)
+		
 		optimizer.zero_grad()
 		out = model.forward(batch_inputs)
 
