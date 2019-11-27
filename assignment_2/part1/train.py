@@ -75,9 +75,9 @@ def train(config, print_eval = True):
 
 	# Initialize the model that we are going to use
 	if config.model_type == "RNN":
-		model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes).to(device)
+		model = VanillaRNN(config.input_length, config.input_dim, config.num_hidden, config.num_classes, device).to(device)
 	else:
-		model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes).to(device)
+		model = LSTM(config.input_length, config.input_dim, config.num_hidden, config.num_classes, device).to(device)
 
 	# Initialize the dataset and data loader (note the +1)
 	dataset = PalindromeDataset(config.input_length+1)
