@@ -145,7 +145,7 @@ def train(config, print_eval = True):
 			# https://github.com/pytorch/pytorch/pull/9655
 			break
 
-	print('Done training.')
+	print('Done training with accuracy:', accuracy)
 	return accuracy
 
  ################################################################################
