@@ -27,6 +27,8 @@ class LSTM(nn.Module):
 
 	def __init__(self, seq_length, input_dim, num_hidden, num_classes, device='cpu'):
 		super(LSTM, self).__init__()
+
+		self.device = device
 		
 		self.W_gx = nn.Parameter(torch.randn(input_dim, num_hidden).to(torch.float64))
 		self.W_ix = nn.Parameter(torch.randn(input_dim, num_hidden).to(torch.float64))
@@ -63,7 +65,7 @@ class LSTM(nn.Module):
 	def forward(self, x):
 		h_t = self.h_0
 		c_t = self.c_0
-		x = x.to(torch.float64)
+		x = x.to(torch.float64).to(self.device)
 		self.all_gradients = []
 
 		for step in range(self.seq_length):
