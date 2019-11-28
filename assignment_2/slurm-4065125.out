@@ -1,0 +1,277 @@
+ERROR: Unable to locate a modulefile for 'eb'
+Initialize dataset with 550591 characters, 91 unique.
+(17:16:33), Train Step: 0/1000000.0, Batch_size: 64, E/sec: 1276, Acc: 1.8229166666666667, Loss: 4.506003207934042
+Target string   :  takeanother draught it would do me no harm.‚Äô So she took 
+Predicted string:  sssmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+---------------------------
+Random generated sentence: Wm                                                           
+---------------------------
+(17:16:39), Train Step: 200/1000000.0, Batch_size: 64, E/sec: 2251, Acc: 42.994791666666664, Loss: 1.9668420662684951
+Target string   : shes in herlittle grey frock.The next day when the feast w
+Predicted string: s er tn te  teth e toea toeue  The tont toi taer the wornt t
+---------------------------
+Random generated sentence: . ‚ÄòThe said the wing the wing the wing the wing the wing th
+---------------------------
+(17:16:46), Train Step: 400/1000000.0, Batch_size: 64, E/sec: 2253, Acc: 49.47916666666667, Loss: 1.7115420391070297
+Target string   : d gaze onthe lovely scenes around him. So he laid himself do
+Predicted string: d tove tf the wioe f the tdttnannd tes  ‚o te sidd tes elf to
+---------------------------
+Random generated sentence: ; and the will the will the will the will the will the will t
+---------------------------
+(17:16:52), Train Step: 600/1000000.0, Batch_size: 64, E/sec: 2245, Acc: 52.473958333333336, Loss: 1.5871423542194782
+Target string   : ast hedied too; and so all were dead.RAPUNZELThere we
+Predicted string: an  te wad  th k and thot l tane toar  TTRNENDEL The e th
+---------------------------
+Random generated sentence: 9 the streat the fire and said the fire and said the fire and
+---------------------------
+(17:16:58), Train Step: 800/1000000.0, Batch_size: 64, E/sec: 2234, Acc: 54.63541666666667, Loss: 1.4972989180293823
+Target string   : e a silken cord, for thenthe river will give me water, and t
+Predicted string: e tnlinl n tamd  aor the  the fogen tatl tove te taser  and t
+---------------------------
+Random generated sentence: ch and the fire and said, ‚ÄòI will the man to the stread to 
+---------------------------
+(17:17:4), Train Step: 1000/1000000.0, Batch_size: 64, E/sec: 2127, Acc: 57.86458333333333, Loss: 1.4030873167447073
+Target string   : ole large enough to put outhis head.When the horseman came
+Predicted string: oud wiyge aaough th tut tft oim hoad  Then the fouse  n tame
+---------------------------
+Random generated sentence: ] the world and the world and the world and the world and the
+---------------------------
+(17:17:10), Train Step: 1200/1000000.0, Batch_size: 64, E/sec: 2261, Acc: 58.723958333333336, Loss: 1.3570340779350942
+Target string   : led. With this the doctor was satisfied, and returned to the 
+Predicted string: lld  Thth thes the wootor tas toi ntied  and taaurned th the 
+---------------------------
+Random generated sentence: o the word the word the word to the word to the word to the w
+---------------------------
+(17:17:17), Train Step: 1400/1000000.0, Batch_size: 64, E/sec: 2239, Acc: 58.020833333333336, Loss: 1.3628082065145608
+Target string   : enup the glass mountain. They had been unable to decide whet
+Predicted string: e dtp ahe srass oorntain  The  wad seen tpdble th traote then
+---------------------------
+Random generated sentence: Kyow what have the sparrow and said, ‚ÄòI will not do not the
+---------------------------
+(17:17:23), Train Step: 1600/1000000.0, Batch_size: 64, E/sec: 1992, Acc: 61.744791666666664, Loss: 1.2562468490104675
+Target string   : st, as he found himself on a wide heath that would take him m
+Predicted string: s   an he wornd tis elf an t sile daade ahet hauld nhke tem t
+---------------------------
+Random generated sentence: Ô the world was a great son and the wood, and the boy and the
+---------------------------
+(17:17:29), Train Step: 1800/1000000.0, Batch_size: 64, E/sec: 2241, Acc: 60.182291666666664, Loss: 1.280214223687223
+Target string   :  onthe ground at the same time. Then the little tailor leapt
+Predicted string:  afethe wreund as hhe stme thme  Then the mittle hailor setv 
+---------------------------
+Random generated sentence: the world was a little tailor and the wood that the morning t
+---------------------------
+(17:17:35), Train Step: 2000/1000000.0, Batch_size: 64, E/sec: 2212, Acc: 63.463541666666664, Loss: 1.1910170062280738
+Target string   :  tasted!‚ÄôShe touched it with her finger, and said: ‚ÄòAh! 
+Predicted string:  thkte  ‚Äô oe whoched ht aath tir hanger  and taid, ‚ÄòIl,‚
+---------------------------
+Random generated sentence: be the world was a little streat the world was a little strea
+---------------------------
+(17:17:42), Train Step: 2200/1000000.0, Batch_size: 64, E/sec: 2234, Acc: 59.84374999999999, Loss: 1.2823925415144448
+Target string   : home,‚Äô said the fish; ‚Äòshe is pope already.‚ÄôThen the 
+Predicted string: he e  Äô said the wirhe ‚ÄòIhe ws trse tnleady  Äô ‚he  the 
+---------------------------
+Random generated sentence: ô said the world and said: ‚ÄòI will give you a great tree, a
+---------------------------
+(17:17:48), Train Step: 2400/1000000.0, Batch_size: 64, E/sec: 2241, Acc: 61.510416666666664, Loss: 1.257334633706428
+Target string   :  metwith some misfortunes, to be sure; but he was now well r
+Predicted string:  ta  tith tome wogeortune   ahote aore  aut te sas tot tell a
+---------------------------
+Random generated sentence: Äô said the stard, and said: ‚ÄòI will give you the stard of 
+---------------------------
+(17:17:54), Train Step: 2600/1000000.0, Batch_size: 64, E/sec: 2200, Acc: 62.42187500000001, Loss: 1.2181860832840088
+Target string   : ose-bush in two, and have broken off the rose and brought it 
+Predicted string: one gesh tt tho  and tade yeouen tf  the wooe tnd seought tt 
+---------------------------
+Random generated sentence: just the sparrow and the sparrow was a little witch of the wo
+---------------------------
+(17:18:0), Train Step: 2800/1000000.0, Batch_size: 64, E/sec: 2149, Acc: 63.020833333333336, Loss: 1.1567192202517091
+Target string   :  to be informed that as he was a great warrior, he had onere
+Predicted string:  th te sn ormed thet t  te was s soeat sisminr  ae wad snc do
+---------------------------
+Random generated sentence: me the world was a son of the world was a son of the world wa
+---------------------------
+(17:18:7), Train Step: 3000/1000000.0, Batch_size: 64, E/sec: 2245, Acc: 61.43229166666667, Loss: 1.2327225135160982
+Target string   : ew out to meet him. He had not flown far, however, when he ca
+Predicted string: e  tft oh te,t oim  Te wad not tiywe tos  aewever, heon te wa
+---------------------------
+Random generated sentence: 0 man was already the stones and the man was a little man, an
+---------------------------
+(17:18:13), Train Step: 3200/1000000.0, Batch_size: 64, E/sec: 2211, Acc: 62.65625, Loss: 1.180659044455581
+Target string   : hat was asked, and his brothers weregiven up, and went on wi
+Predicted string: hed tas a  ed  and tes wrother  wene siven hp  and tent tn ti
+---------------------------
+Random generated sentence: g the world should be a great son and said: ‚ÄòWhat did you s
+---------------------------
+(17:18:19), Train Step: 3400/1000000.0, Batch_size: 64, E/sec: 2217, Acc: 63.098958333333336, Loss: 1.1963892772358007
+Target string   : es of various formats will be found in:        http://www.gu
+Predicted string: e  wf terinns tor ati watl be aound tt         Tatp  /www gu
+---------------------------
+Random generated sentence: Then the second son went to the fire, and said to him, and sa
+---------------------------
+(17:18:25), Train Step: 3600/1000000.0, Batch_size: 64, E/sec: 2229, Acc: 63.90625, Loss: 1.1704848980185407
+Target string   : e done for him so many years, and because Ican no longer wor
+Predicted string: e tone tor him oo tuny aears  and segamse h aan sotoonger thr
+---------------------------
+Random generated sentence: ; and the second son said: ‚ÄòI have so that they were seen i
+---------------------------
+(17:18:32), Train Step: 3800/1000000.0, Batch_size: 64, E/sec: 2122, Acc: 65.234375, Loss: 1.1104912794730564
+Target string   : s of peas into the ashes.But the little maiden went out int
+Predicted string: s tf teasain o the wihes, Tut the bittle manden went tut on 
+---------------------------
+Random generated sentence: ô Then the king said, ‚ÄòI will not take a feet, and the man 
+---------------------------
+(17:18:38), Train Step: 4000/1000000.0, Batch_size: 64, E/sec: 2198, Acc: 64.140625, Loss: 1.1388271235844547
+Target string   :  the mother sent the two children to thetown to buy needles 
+Predicted string:  the souher sant the sro shild en,wo the srwn ao tey toad e, 
+---------------------------
+Random generated sentence: 6 which the stones were the princess were still standing to t
+---------------------------
+(17:18:44), Train Step: 4200/1000000.0, Batch_size: 64, E/sec: 2203, Acc: 63.072916666666664, Loss: 1.1686062381639934
+Target string   : so he took hisbow and made ready to shoot at it. Then the fo
+Predicted string: s  ta sook tim had,tnd sode aeady ao teeut tn tt, ‚he  the fo
+---------------------------
+Random generated sentence: ) and said, ‚ÄòI will give you a long time, so that the fox s
+---------------------------
+(17:18:50), Train Step: 4400/1000000.0, Batch_size: 64, E/sec: 2228, Acc: 64.296875, Loss: 1.1333408485464354
+Target string   : whole. What rejoicing there was! They embraced their dear mot
+Predicted string: wao e  Thet aaaoiceng the e tas ‚Hhe  avpraik  the r haar cot
+---------------------------
+Random generated sentence: [any morning the first the wolf was not the fire and the fire
+---------------------------
+(17:18:57), Train Step: 4600/1000000.0, Batch_size: 64, E/sec: 2229, Acc: 64.32291666666666, Loss: 1.1323505960335063
+Target string   : n the skin. But as theweather grew so bad and there was a st
+Predicted string: ndthe wein  Tut ts hhe sodrher waew ao tecetnd the e was a lo
+---------------------------
+Random generated sentence: nd the sea what he was to be a little tailor, and the man was
+---------------------------
+(17:19:3), Train Step: 4800/1000000.0, Batch_size: 64, E/sec: 2223, Acc: 65.9375, Loss: 1.081805287999051
+Target string   : . She did draw him up, but when hecame near the edge, she st
+Predicted string: . Toe cod noaw him tp  aut then te wame tear hhe snge  ahe wa
+---------------------------
+Random generated sentence: g the stream and said: ‚ÄòI will give you a carter may be the
+---------------------------
+(17:19:9), Train Step: 5000/1000000.0, Batch_size: 64, E/sec: 2230, Acc: 63.56770833333333, Loss: 1.1558614408149301
+Target string   : was mid-day, they saw a beautiful snow-white bird sitting on 
+Predicted string: whs aasnwey, ahe  wai t leautiful btow-white werd todting an 
+---------------------------
+Random generated sentence: 0 will be a little man, ‚ÄòI am sure you as you can carry you
+---------------------------
+(17:19:15), Train Step: 5200/1000000.0, Batch_size: 64, E/sec: 2249, Acc: 63.515625, Loss: 1.1559209895923714
+Target string   : ld to the garden where the wildbeasts were kept, and washed 
+Predicted string: ll th the srrdeneaiete the sinl beasts thre tiet  and ths ed 
+---------------------------
+Random generated sentence: UNCEMS AND THE SHOEMAKER
+     THE FOX AND THE SHOEMAKER
+     
+---------------------------
+(17:19:22), Train Step: 5400/1000000.0, Batch_size: 64, E/sec: 2235, Acc: 64.21875, Loss: 1.1334616637891455
+Target string   : out, but saw no one on thestairs, and cried again: ‚ÄòWhere 
+Predicted string: o    aut thi to one af the werirs  and saied onain. ‚ÄòIhare 
+---------------------------
+Random generated sentence: !‚Äô and the second son was a stone and said: ‚ÄòWhat do you 
+---------------------------
+(17:19:28), Train Step: 5600/1000000.0, Batch_size: 64, E/sec: 2208, Acc: 65.13020833333333, Loss: 1.1175598792210715
+Target string   : me, cat,we will go to our pot of fat which we have stored up
+Predicted string: me  aam, ahnwill ni ao tur hoo of tat ahach ta wave atroe  tp
+---------------------------
+Random generated sentence: AGty thing that she was a little cap on the first stone the p
+---------------------------
+(17:19:34), Train Step: 5800/1000000.0, Batch_size: 64, E/sec: 2416, Acc: 64.34895833333333, Loss: 1.105061637143451
+Target string   : an the other. ‚ÄòWell, wife,‚Äô said thefisherman, ‚Äòare yo
+Predicted string: andshe sther  TÄòIhll, whfe,‚Äô said the fisherman, ‚ÄòIne yo
+---------------------------
+Random generated sentence: UNTEL
+STORY OF THIS PROJECT GUTENBERGEL
+     THE FOUR CLEVER 
+---------------------------
+(17:19:41), Train Step: 6000/1000000.0, Batch_size: 64, E/sec: 2215, Acc: 64.765625, Loss: 1.1234590835757305
+Target string   : e her.‚Äô Atlength a man came from a distance and wooed her,
+Predicted string: e tar  Äô ‚n tangth t man wame trom t goshance tnd sands her 
+---------------------------
+Random generated sentence: Oh, will you must be mayor, I will give you the second man to
+---------------------------
+(17:19:47), Train Step: 6200/1000000.0, Batch_size: 64, E/sec: 2209, Acc: 65.78125, Loss: 1.070398184122802
+Target string   :  their journey, till the day grew so warm, andthe sun so sco
+Predicted string:  the r hourney, ahll aheyfoy srew he werm  and the sen sa tar
+---------------------------
+Random generated sentence: At the cat said, ‚ÄòI will give you a man who was the man and
+---------------------------
+(17:19:53), Train Step: 6400/1000000.0, Batch_size: 64, E/sec: 2210, Acc: 66.640625, Loss: 1.076529773415987
+Target string   : nberg-tm.1.E.5.  Do not copy, display, perform, distribute 
+Predicted string: nderg-tm ‚1.E.1.  Lo not copyi aistlay, aerhorm  aedtribute 
+---------------------------
+Random generated sentence: nd the second morning the second son said, ‚ÄòI will not go o
+---------------------------
+(17:19:59), Train Step: 6600/1000000.0, Batch_size: 64, E/sec: 2225, Acc: 65.859375, Loss: 1.1017832535338599
+Target string   : il the moon rises, and then we shall see the crumbs of bread
+Predicted string: inlthe satn walen  and the  tenhhall bee the paambl tf tread 
+---------------------------
+Random generated sentence: E WEND TO LEARN WHAT FEAR WAS
+
+OF THE FOX AND TO LEARN WHATHE
+---------------------------
+(17:20:6), Train Step: 6800/1000000.0, Batch_size: 64, E/sec: 2026, Acc: 66.51041666666667, Loss: 1.0800880907286452
+Target string   :  theforest, and when they saw from afar the three servants r
+Predicted string:  the sireste and then the  waw trom t ar the shree strvant- t
+---------------------------
+Random generated sentence:  the star-gazer, and the soldier was so strange time the spin
+---------------------------
+(17:20:12), Train Step: 7000/1000000.0, Batch_size: 64, E/sec: 2218, Acc: 64.66145833333333, Loss: 1.102981635764062
+Target string   :  it was day. In the morning the kingcame, and when he saw hi
+Predicted string:  tn was ten  Tn the morning whe sing wame  and then te wai te
+---------------------------
+Random generated sentence: D THE FOX AND THE SHOEMAKER
+     THE QUEEN BEE THA PISSII
+   
+---------------------------
+(17:20:18), Train Step: 7200/1000000.0, Batch_size: 64, E/sec: 2186, Acc: 63.98437500000001, Loss: 1.1588481706787614
+Target string   : volunteers with theassistance they need, is critical to reac
+Predicted string: velagteers ahth the sshomtince aoer wevd  an toyeicallto meac
+---------------------------
+Random generated sentence: he song wanted to see him and said: ‚ÄòI will give you the fi
+---------------------------
+(17:20:25), Train Step: 7400/1000000.0, Batch_size: 64, E/sec: 2207, Acc: 65.72916666666667, Loss: 1.0821093884090314
+Target string   : zel, with the twins to which shehad given birth, a boy and a
+Predicted string: zed  ahth the woolstto saoch the wad soven hegdh  ansox ttd s
+---------------------------
+Random generated sentence: So he said, ‚ÄòThis was a golden child, and I will give you n
+---------------------------
+(17:20:31), Train Step: 7600/1000000.0, Batch_size: 64, E/sec: 2205, Acc: 67.734375, Loss: 1.0435176894987093
+Target string   :  in paragraph 1.E.8.1.B.  ‚ÄúProject Gutenberg‚Äù is a regi
+Predicted string:  ts tartgraph 1.C.1 1.E.   ÄúProject Gutenberg-Äù is tllepe
+---------------------------
+Random generated sentence: You shall be a fine thing as you will be a fine thing as you 
+---------------------------
+(17:20:37), Train Step: 7800/1000000.0, Batch_size: 64, E/sec: 2202, Acc: 65.91145833333333, Loss: 1.0657220201182647
+Target string   : hen the countryman rejoiced athis good luck, and said, ‚ÄòI 
+Predicted string: he  the shontry an semoiced tn tim fold tick  hnd taid: ‚ÄòI 
+---------------------------
+Random generated sentence: beautiful things to the water, and the servants went on the w
+---------------------------
+(17:20:44), Train Step: 8000/1000000.0, Batch_size: 64, E/sec: 2181, Acc: 66.11979166666667, Loss: 1.075791199873567
+Target string   :  bythe wing, but her finger and hand remained sticking fast 
+Predicted string:  te the wands aut te  hangerssnd tindstefained toalking aost 
+---------------------------
+Random generated sentence: Red the forest and said: ‚ÄòWhat a fine things me!‚Äô said th
+---------------------------
+(17:20:50), Train Step: 8200/1000000.0, Batch_size: 64, E/sec: 2173, Acc: 65.26041666666667, Loss: 1.1074023605048398
+Target string   : forgiven him, and of his wish tohave him home again: so, bef
+Predicted string: for ove  aes  and snftis sifh to seve hem aeme again. ‚o  wuc
+---------------------------
+Random generated sentence: /-‚ÄòThe second even a man who was to be able to see that the
+---------------------------
+(17:20:56), Train Step: 8400/1000000.0, Batch_size: 64, E/sec: 2191, Acc: 66.19791666666667, Loss: 1.0608624818766883
+Target string   : e meantime I will stay here andwait for you,‚Äô said the gir
+Predicted string: e taantime t will goay aer  and saltiaor your Äô aaid the mia
+---------------------------
+Random generated sentence: E WERNDEN
+     THE FOX AND THE SAUSA ANY HIS GRANDSANTHENS FO
+---------------------------
+(17:21:2), Train Step: 8600/1000000.0, Batch_size: 64, E/sec: 2201, Acc: 66.66666666666666, Loss: 1.0597415163167583
+Target string   :  well to drink. But when he began to walk and to move about, 
+Predicted string:  till ah toivk ‚Tut then te wegan to batk and shogave a out  
+---------------------------
+Random generated sentence: ve the fire, and the sea carely will be a great treasures, an
+---------------------------
+[1.8229166666666667, 42.994791666666664, 49.479166666666671, 52.473958333333336, 54.635416666666671, 57.864583333333329, 58.723958333333336, 58.020833333333336, 61.744791666666664, 60.182291666666664, 63.463541666666664, 59.843749999999993, 61.510416666666664, 62.421875000000007, 63.020833333333336, 61.432291666666671, 62.65625, 63.098958333333336, 63.90625, 65.234375, 64.140625, 63.072916666666664, 64.296875, 64.322916666666657, 65.9375, 63.567708333333329, 63.515625, 64.21875, 65.130208333333329, 64.348958333333329, 64.765625, 65.78125, 66.640625, 65.859375, 66.510416666666671, 64.661458333333329, 63.984375000000007, 65.729166666666671, 67.734375, 65.911458333333329, 66.119791666666671, 65.260416666666671, 66.197916666666671, 66.666666666666657] [4.506003207934042, 1.9668420662684951, 1.7115420391070297, 1.5871423542194782, 1.4972989180293823, 1.4030873167447073, 1.3570340779350942, 1.3628082065145608, 1.2562468490104675, 1.280214223687223, 1.1910170062280738, 1.2823925415144448, 1.257334633706428, 1.2181860832840088, 1.1567192202517091, 1.2327225135160982, 1.180659044455581, 1.1963892772358007, 1.1704848980185407, 1.1104912794730564, 1.1388271235844547, 1.1686062381639934, 1.1333408485464354, 1.1323505960335063, 1.081805287999051, 1.1558614408149301, 1.1559209895923714, 1.1334616637891455, 1.1175598792210715, 1.105061637143451, 1.1234590835757305, 1.070398184122802, 1.076529773415987, 1.1017832535338599, 1.0800880907286452, 1.102981635764062, 1.1588481706787614, 1.0821093884090314, 1.0435176894987093, 1.0657220201182647, 1.075791199873567, 1.1074023605048398, 1.0608624818766883, 1.0597415163167583]
+Done training.
