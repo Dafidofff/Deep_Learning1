@@ -115,7 +115,7 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
                 # filename, number of rows, normalize) to save the generated
                 # images, e.g.:
                 save_image(fake_images[:25],
-                           'images/{}.png'.format(batches_done),
+                           'gan_images/{}.png'.format(batches_done),
                            nrow=5, normalize=True)
                 pass
 
