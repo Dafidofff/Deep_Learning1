@@ -64,6 +64,7 @@ class Discriminator(nn.Module):
 
 
 def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
+    device = args.device
     loss_function = nn.BCELoss().to(device)
     discriminator = discriminator.to(device)
     generator = generator.to(device)
@@ -71,7 +72,6 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
     for epoch in range(args.n_epochs):
         for i, (imgs, _) in enumerate(dataloader):
             # imgs.cuda()
-            device = args.device
             imgs.to(device)
 
             batch_size = imgs.shape[0]
