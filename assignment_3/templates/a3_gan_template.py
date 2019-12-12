@@ -64,19 +64,23 @@ class Discriminator(nn.Module):
 
 
 def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
-    loss_function = nn.BCELoss()
+    loss_function = nn.BCELoss().to(device)
+    discriminator = discriminator.to(device)
+    generator = generator.to(device)
 
     for epoch in range(args.n_epochs):
         for i, (imgs, _) in enumerate(dataloader):
             # imgs.cuda()
+            device = args.device
+            imgs.to(device)
 
             batch_size = imgs.shape[0]
 
-            latent_vectors = torch.randn(batch_size, args.latent_dim)
+            latent_vectors = torch.randn(batch_size, args.latent_dim).to(device)
             fake_images = generator.forward(latent_vectors)
 
-            disc_fake_out = discriminator.forward(fake_images)
-            disc_real_out = discriminator.forward(imgs)
+            disc_fake_out = discriminator.forward(fake_images).to(device)
+            disc_real_out = discriminator.forward(imgs).to(device)
 
             # Train Generator
             # ---------------
@@ -99,9 +103,9 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
             
             
             batches_done = epoch * len(dataloader) + i
-            if batches_done % 100 == 0:
-                print("epoch: {} batch: {} gen loss: {} disc loss: {}".format(epoch, i, gen_loss.item(), disc_total_loss.item()))
-
+            if batches_done % 200 == 0:
+                print(f"[Epoch {epoch}] batch: {i} gen_loss: {gen_loss.item()} disc_loss: {disc_total_loss.item()}")
+            
             # Save Images
             # ----------- 
             if batches_done % args.save_interval == 0:
@@ -152,6 +156,8 @@ if __name__ == "__main__":
                         help='dimensionality of the latent space')
     parser.add_argument('--save_interval', type=int, default=500,
                         help='save every SAVE_INTERVAL iterations')
+    parser.add_argument('--device', type=str, default="cpu",
+                        help='do not train a model, load one instead.')
     args = parser.parse_args()
 
     main()
