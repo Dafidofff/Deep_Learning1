@@ -69,15 +69,14 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
     discriminator = discriminator.to(device)
     generator = generator.to(device)
 
-    ones = torch.ones(batch_size, 1).to(device)
-    zeros = torch.zeros(batch_size, 1).to(device)
-
     for epoch in range(args.n_epochs):
         for i, (imgs, _) in enumerate(dataloader):
             # imgs.cuda()
             imgs = imgs.to(device)
 
             batch_size = imgs.shape[0]
+            ones = torch.ones(batch_size, 1).to(device)
+            zeros = torch.zeros(batch_size, 1).to(device)
 
             latent_vectors = torch.randn(batch_size, args.latent_dim).to(device)
             fake_images = generator.forward(latent_vectors)
