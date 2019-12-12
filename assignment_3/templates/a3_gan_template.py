@@ -72,7 +72,7 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
     for epoch in range(args.n_epochs):
         for i, (imgs, _) in enumerate(dataloader):
             # imgs.cuda()
-            imgs.to(device)
+            imgs = imgs.to(device)
 
             batch_size = imgs.shape[0]
 
