@@ -69,6 +69,9 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
     discriminator = discriminator.to(device)
     generator = generator.to(device)
 
+    ones = torch.ones(batch_size, 1).to(device)
+    zeros = torch.zeros(batch_size, 1).to(device)
+
     for epoch in range(args.n_epochs):
         for i, (imgs, _) in enumerate(dataloader):
             # imgs.cuda()
@@ -86,7 +89,7 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
             # ---------------
             optimizer_G.zero_grad()
 
-            gen_loss = loss_function(disc_fake_out, torch.ones(batch_size, 1))
+            gen_loss = loss_function(disc_fake_out, ones)
             gen_loss.backward(retain_graph=True)
             optimizer_G.step()
             
@@ -95,8 +98,8 @@ def train(dataloader, discriminator, generator, optimizer_G, optimizer_D):
             # -------------------
             optimizer_D.zero_grad()
 
-            disc_loss_real = loss_function(disc_real_out, torch.ones(batch_size, 1))
-            disc_loss_fake = loss_function(disc_fake_out, torch.zeros(batch_size, 1))
+            disc_loss_real = loss_function(disc_real_out, ones)
+            disc_loss_fake = loss_function(disc_fake_out, zeros)
             disc_total_loss = disc_loss_real + disc_loss_fake
             disc_total_loss.backward()
             optimizer_D.step()
