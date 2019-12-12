@@ -118,7 +118,7 @@ def epoch_iter(model, data, optimizer):
             out.backward()
             optimizer.step()
 
-    average_epoch_elbo = elbow/len(data)
+    average_epoch_elbo = elbow
 
     return average_epoch_elbo
 
@@ -189,7 +189,7 @@ def main():
         save_image(samples.view(dens*dens, 1, 28, 28), "manifold.png", nrow=dens)
 
 
-    save_elbo_plot(train_curve, val_curve, 'elbo.pdf')
+    save_elbo_plot(train_curve, val_curve, 'elbo.png')
 
 
 if __name__ == "__main__":
